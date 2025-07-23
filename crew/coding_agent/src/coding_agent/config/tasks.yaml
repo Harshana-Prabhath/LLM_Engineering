@@ -1,0 +1,6 @@
+solve_question:
+  description: >
+    You are given the assignment: {assignment}. Write an optimzed python code to solve it.
+  expected_output: >
+    A text file containing the python code and the execution output.
+  agent: developer

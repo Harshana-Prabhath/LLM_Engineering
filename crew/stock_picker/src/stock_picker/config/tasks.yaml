@@ -1,0 +1,29 @@
+find_trending_companies:
+  description: >
+    Find the best performing and trending companies in the {sector} sector, by conductin a search for the latest news. Find new companies that you've not found before.
+  expected_output: >
+    A list of best companies in the {sector} sector.
+  agent: trending_company_finder
+  output_file: output/trending_companies.json
+
+research_trending_companies:
+  description: >
+    Given the list of best trending companies in the {sector} sector, conduct a thorough research on the each company by search online 
+    and provide a detailed analaysis of each company in a report.
+  expected_output: >
+    A detailed analysis report on each company.
+  agent: financial_business_researcher
+  context:
+    - find_trending_companies
+  output_file: output/research_report.json
+
+pick_the_best_company:
+  description: >
+    Given the report on analysis of each trending companies. Pick the best and the most suitable
+    company for investment. Respond with a detailed report on why you picked that comapny and which companies are not selected.
+  expected_output: >
+    A report on the choosen company and why it is choosen and the companies which were not selected and reason for each.
+  agent: stock_picker
+  context:
+    - research_trending_companies
+  output_file: output/final_report.md
