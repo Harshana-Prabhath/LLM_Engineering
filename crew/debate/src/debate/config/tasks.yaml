@@ -1,0 +1,25 @@
+propose:
+  description: >
+    You are proposig the motion : {motion}.
+    Come up with arguments to support this motion in a debate. Be very convincing.
+  expected_output: >
+    Clear arguments supporting the motion, in a concise manner
+  agent: debeter
+  output_file: output/propose.md
+
+oppose:
+  description: >
+    You are opposing the motion : {motion}
+    Come up with arguments that oppose this motion in debate. Arguments have to be very convincing.
+  expected_output: >
+    Clear arguments that opposed the motion, in a concise manner.
+  agent: debeter
+  output_file: output/oppose.md
+
+judging_task:
+  description: >
+    You are deciding which is more convincing by considering arguments the both propose and oppose the motion.
+  expected_output: >
+    Your decision on which side is more convincing, and why.
+  agent: Judge
+  output_file: output/decide.md
